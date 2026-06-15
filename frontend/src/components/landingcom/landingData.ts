@@ -34,6 +34,21 @@ export interface Article {
 	category: string;
 }
 
+export interface Feature {
+	icon: string;
+	title: string;
+	desc: string;
+	color: string;
+}
+
+export interface Benefit {
+	icon: string;
+	title: string;
+	benefits: string[];
+	color: string;
+	bgColor: string;
+}
+
 export const JOBS: Job[] = [
 	{ id: 1, title: "UI/UX Designer", company: "Google", location: "Colombo, LK", type: "Full Time", salary: "Rs 120K/mo", logo: "G", color: "#4285F4", tags: ["Design", "Figma"], posted: "2 days ago" },
 	{ id: 2, title: "React Developer", company: "Microsoft", location: "Remote", type: "Part Time", salary: "Rs 95K/mo", logo: "M", color: "#00A4EF", tags: ["React", "TS"], posted: "1 day ago" },
@@ -72,4 +87,44 @@ export const ARTICLES: Article[] = [
 	{ title: "10 Resume Tips That Get You Hired in 2025", date: "May 1, 2026", author: "Sarah K.", img: "📰", category: "Career Advice" },
 	{ title: "How to Ace Your Next Technical Interview", date: "Apr 24, 2026", author: "David L.", img: "🎯", category: "Interview Tips" },
 	{ title: "Remote Work Trends Shaping Tech in 2026", date: "Apr 18, 2026", author: "Mia R.", img: "🌐", category: "Trends" },
+];
+
+export const FEATURES: Feature[] = [
+	{ icon: "🔍", title: "Smart Job Matching", desc: "AI-powered algorithms match your skills with the perfect opportunities instantly." },
+	{ icon: "⚡", title: "Quick Applications", desc: "Apply to jobs with a single click. No lengthy forms, just pure efficiency." },
+	{ icon: "🔔", title: "Real-Time Alerts", desc: "Get instant notifications for new jobs matching your profile and preferences." },
+	{ icon: "👥", title: "Direct Chat", desc: "Connect directly with employers without intermediaries. Clear communication always." },
+	{ icon: "📊", title: "Track Progress", desc: "Monitor all your applications in one place with detailed status updates and feedback." },
+	{ icon: "💰", title: "Transparent Pricing", desc: "No hidden fees. Know exactly what you're paying for before you commit." },
+];
+
+export const BENEFITS = [
+	{
+		icon: "🎯",
+		title: "For Job Seekers",
+		benefits: [
+			"Access 2,800+ verified job listings",
+			"AI-powered job recommendations",
+			"One-click applications",
+			"Real-time interview updates",
+			"Free career resources and tips",
+			"Networking with professionals"
+		],
+		color: "#6366F1",
+		bgColor: "#EEF2FF"
+	},
+	{
+		icon: "💼",
+		title: "For Employers",
+		benefits: [
+			"Access 18K+ pre-vetted candidates",
+			"Smart candidate matching",
+			"Streamlined hiring workflow",
+			"Bulk job posting",
+			"Analytics and insights",
+			"24/7 support"
+		],
+		color: "#3B82F6",
+		bgColor: "#EFF6FF"
+	}
 ];

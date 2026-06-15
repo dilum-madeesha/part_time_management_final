@@ -4,55 +4,114 @@ import { Link } from "react-router-dom";
 export default function LandingNav() {
 	const [open, setOpen] = useState(false);
 
+	const navLinks = [
+		{ label: "Home", href: "#home" },
+		{ label: "Jobs", href: "#jobs" },
+		{ label: "Employers", href: "#employers" },
+		{ label: "About", href: "#about" },
+		{ label: "Contact", href: "#contact" }
+	];
+
 	return (
-		<nav className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-				<Link to="/" className="flex items-center gap-2 no-underline">
-					<div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-						<span className="text-white font-black text-sm">G</span>
+		<nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100/20 shadow-sm">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="h-16 flex items-center justify-between">
+					{/* Logo */}
+					<Link to="/" className="flex items-center gap-2.5 no-underline group">
+						<div className="w-9 h-9 bg-linear-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform">
+							<span className="text-white font-black text-base">S</span>
+						</div>
+						<div className="flex items-baseline gap-1">
+							<span className="font-black text-lg text-slate-900 tracking-tight">Smart</span>
+							<span className="font-black text-lg bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Hire</span>
+						</div>
+					</Link>
+
+					{/* Desktop Navigation */}
+					<div className="hidden lg:flex items-center gap-1">
+						{navLinks.map((link) => (
+							<a
+								key={link.label}
+								href={link.href}
+								className="text-sm font-medium text-slate-600 hover:text-blue-600 px-4 py-2 rounded-lg transition-all hover:bg-blue-50/50"
+							>
+								{link.label}
+							</a>
+						))}
 					</div>
-					<span className="font-black text-xl text-slate-800 tracking-tight">
-						Job<span className="text-blue-600">Net</span>
-					</span>
-				</Link>
-				<div className="hidden md:flex items-center gap-8">
-					{["Home", "About", "Jobs", "Contact"].map((label) => (
-						<a key={label} href="#" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
-							{label}
-						</a>
-					))}
-				</div>
-				<div className="hidden md:flex items-center gap-3">
-					<Link to="/login" className="text-sm font-semibold text-blue-600 hover:text-blue-700 px-4 py-2 rounded-lg hover:bg-blue-50 transition-all">
-						Login
-					</Link>
-					<Link to="/login" className="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg transition-all shadow-sm">
-						Register
-					</Link>
-				</div>
-				<button className="md:hidden p-2 rounded-lg hover:bg-slate-100" onClick={() => setOpen(!open)}>
-					<span className="block w-5 h-0.5 bg-slate-700 mb-1"></span>
-					<span className="block w-5 h-0.5 bg-slate-700 mb-1"></span>
-					<span className="block w-5 h-0.5 bg-slate-700"></span>
-				</button>
-			</div>
-			{open && (
-				<div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 flex flex-col gap-3">
-					{["Home", "About", "Jobs", "Contact"].map((label) => (
-						<a key={label} href="#" className="text-sm font-medium text-slate-600">
-							{label}
-						</a>
-					))}
-					<div className="flex gap-3 pt-2">
-						<Link to="/login" className="flex-1 text-sm font-semibold text-blue-600 border border-blue-600 py-2 rounded-lg text-center">
+
+					{/* CTA Buttons - Desktop */}
+					<div className="hidden md:flex items-center gap-2">
+						<Link
+							to="/login"
+							className="text-sm font-semibold text-slate-700 hover:text-blue-600 px-4 py-2 rounded-lg hover:bg-slate-100 transition-all"
+						>
 							Login
 						</Link>
-						<Link to="/login" className="flex-1 text-sm font-semibold text-white bg-blue-600 py-2 rounded-lg text-center">
+						<Link
+							to="/login"
+							className="text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-5 py-2 rounded-lg transition-all shadow-md hover:shadow-lg"
+						>
 							Register
 						</Link>
 					</div>
+
+					{/* Mobile Menu Button */}
+					<button
+						className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+						onClick={() => setOpen(!open)}
+						aria-label="Toggle menu"
+					>
+						<div className="w-5 h-5 flex flex-col justify-center gap-1.5">
+							<span
+								className={`block w-5 h-0.5 bg-slate-700 transition-all duration-300 ${
+									open ? "rotate-45 translate-y-2" : ""
+								}`}
+							></span>
+							<span
+								className={`block w-5 h-0.5 bg-slate-700 transition-all duration-300 ${
+									open ? "opacity-0" : ""
+								}`}
+							></span>
+							<span
+								className={`block w-5 h-0.5 bg-slate-700 transition-all duration-300 ${
+									open ? "-rotate-45 -translate-y-2" : ""
+								}`}
+							></span>
+						</div>
+					</button>
 				</div>
-			)}
+
+				{/* Mobile Navigation */}
+				{open && (
+					<div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-2 animate-in fade-in slide-in-from-top-4">
+						{navLinks.map((link) => (
+							<a
+								key={link.label}
+								href={link.href}
+								className="block text-sm font-medium text-slate-600 hover:text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-all"
+								onClick={() => setOpen(false)}
+							>
+								{link.label}
+							</a>
+						))}
+						<div className="flex gap-3 pt-3 border-t border-slate-100">
+							<Link
+								to="/login"
+								className="flex-1 text-sm font-semibold text-blue-600 border-2 border-blue-600 py-2 rounded-lg text-center hover:bg-blue-50 transition-all"
+							>
+								Login
+							</Link>
+							<Link
+								to="/login"
+								className="flex-1 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-indigo-600 py-2 rounded-lg text-center hover:shadow-lg transition-all"
+							>
+								Register
+							</Link>
+						</div>
+					</div>
+				)}
+			</div>
 		</nav>
 	);
 }
