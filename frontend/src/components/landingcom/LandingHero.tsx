@@ -1,113 +1,211 @@
 import { Link } from "react-router-dom";
+import parttimeImage from "../../assets/parttime.png";
+
+import careerChart from "../../assets/presnet.png";
+
+import trustShield from "../../assets/lock.png";
 
 export default function LandingHero() {
 	return (
-		<section className="bg-linear-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden relative pt-20 pb-32">
-			{/* Background Decorations */}
-			<div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -translate-y-32 translate-x-32 pointer-events-none" />
-			<div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl translate-y-32 -translate-x-32 pointer-events-none" />
-			<div className="absolute top-1/2 left-1/2 w-72 h-72 bg-cyan-400/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+		<section className="relative pt-20 pb-32 overflow-hidden">
+			{/* Background Image */}
+			<div className="absolute inset-0 z-0">
+				<img
+					src={parttimeImage}
+					alt="Part-time jobs background"
+					className="w-full h-full object-cover"
+				/>
+				{/* Overlay for better text readability */}
+				<div className="absolute inset-0 bg-black/40" />
+			</div>
 
+			{/* Content */}
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-				{/* Hero Content */}
-				<div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+				<div className="grid lg:grid-cols-2 gap-1 items-center">
 					{/* Left Content */}
 					<div className="flex flex-col justify-center">
 						{/* Badge */}
-						<div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-6 w-fit hover:bg-white/20 transition-all">
-							<span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-							<span className="text-white/90">2,800+ Active Jobs Right Now</span>
+						<div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-4 py-2 text-sm font-medium mb-6 w-fit hover:bg-white/30 transition-all">
+							<span className="w-2 h-2 bg-blue-950 rounded-full animate-pulse"></span>
+							<span className="text-white/90">125+ New Part-Time Jobs Posted This Week</span>
 						</div>
 
 						{/* Headline */}
-						<h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
-							Find Your Next
+						<h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight text-white">
+							Find Your Perfect
 							<br />
-							<span className="bg-linear-to-r from-cyan-400 via-blue-300 to-indigo-400 bg-clip-text text-transparent">Part-Time Job</span>
+							<span className="bg-linear-to-r from-cyan-300 via-blue-300 to-indigo-300 bg-clip-text text-transparent">Part-Time Job Today</span>
 						</h1>
 
 						{/* Subheading */}
-						<p className="text-lg text-white/70 mb-8 leading-relaxed max-w-md font-light">
-							Connect with thousands of verified employers and secure your ideal role in minutes. Smart matching. Real opportunities. Your success.
+						<p className="text-lg text-white/80 mb-8 leading-relaxed max-w-md font-light">
+							Connect job seekers with trusted employers and discover flexible part-time opportunities near you.
 						</p>
 
 						{/* CTA Buttons */}
 						<div className="flex flex-col sm:flex-row gap-4 mb-8">
 							<Link
 								to="/login"
-								className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+								className="inline-flex items-center justify-center gap-2
+  bg-linear-to-r from-blue-600 to-indigo-600
+  text-white px-8 py-4 rounded-xl font-bold
+  shadow-lg
+  transition-all duration-300 ease-in-out
+  hover:-translate-y-1
+  hover:from-blue-700 hover:to-purple-700
+  hover:shadow-2xl"
 							>
-								<span>🚀</span>
-								Get Started Free
+
+								Find Jobs
 							</Link>
 							<a
-								href="#learn-more"
-								className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10 px-8 py-4 rounded-xl font-bold transition-all"
+								href="#"
+								className="inline-flex items-center justify-center gap-2
+  border-2 border-white/80 text-white
+  px-8 py-4 rounded-xl font-bold
+  transition-all duration-300 ease-in-out
+  hover:-translate-y-1
+  hover:bg-white hover:text-blue-700
+  hover:border-white
+  hover:shadow-xl"
 							>
-								<span>▶</span>
-								Watch Demo
+								Post a Job
 							</a>
 						</div>
 
-						{/* Stats */}
-						<div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10">
-							{[
-								{ value: "18K+", label: "Active Users" },
-								{ value: "840", label: "Companies" },
-								{ value: "98%", label: "Success Rate" }
-							].map((stat) => (
-								<div key={stat.label}>
-									<div className="text-2xl font-black text-white">{stat.value}</div>
-									<div className="text-xs text-white/60 mt-1">{stat.label}</div>
-								</div>
-							))}
+						{/* Trust Badges */}
+						<div className="flex flex-col sm:flex-row gap-6">
+							<div className="flex items-center gap-2">
+								<span className="text-green-400 text-2xl">✓</span>
+								<span className="text-white/90 font-semibold">JCI Certified Employer</span>
+							</div>
+							<div className="flex items-center gap-2">
+								<span className="text-blue-400 text-2xl">⭐</span>
+								<span className="text-white/90 font-semibold">4.8/5 Rating</span>
+							</div>
 						</div>
 					</div>
 
-					{/* Right Visual */}
+					{/* Right Visual - Cards */}
 					<div className="hidden lg:flex items-center justify-center relative h-full min-h-96">
-						{/* Main Illustration */}
-						<div className="relative w-full max-w-sm">
-							{/* Central Circle */}
-							<div className="absolute inset-0 bg-linear-to-br from-blue-500/30 to-indigo-600/30 rounded-3xl blur-2xl -z-10"></div>
+						<div className="">
+							<div className="relative w-full max-w-sm space-y-6 ">
+								{/* Career Opportunities Card */}
+								{/* Career Opportunities Card */}
+								<div className="relative z-10 space-y-10  ">
+									<div className="relative bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 overflow-hidden ">
 
-							{/* Main Card */}
-							<div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 mb-6 transform hover:scale-105 transition-transform">
-								<div className="flex items-center gap-4 mb-6">
-									<div className="w-16 h-16 bg-linear-to-br from-blue-400 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
-										🎯
+										{/* Header */}
+										<div className="flex items-start justify-between mb-4 ">
+											<div className="flex items-center gap-3">
+												<img
+													src={careerChart}
+													alt="Career"
+													className="w-12 h-12 object-contain"
+												/>
+
+												<h3 className="text-white font-bold text-lg">
+													Career Opportunities
+												</h3>
+											</div>
+
+
+
+										</div>
+
+										<p className="text-white/75 text-xs leading-relaxed mb-3">
+											Discover flexible part-time jobs and career opportunities from
+											leading organizations across Sri Lanka.
+										</p>
+
+										<div className="flex items-center justify-between text-xs">
+											<span className="text-white/50">
+												Opportunities Available
+											</span>
+											<span className="text-blue-300 font-semibold">
+												Updated Daily
+											</span>
+										</div>
 									</div>
-									<div>
-										<div className="text-white font-bold text-lg">React Developer</div>
-										<div className="text-white/60 text-sm">@Google • Remote</div>
+
+									<div className="absolute -top-14 -right-14 z-0 opacity-180">
+										<div className="w-40 h-40 bg-linear-to-br from-blue-400/30 to-cyan-400/30 rounded-full blur-2xl"></div>
+										<div className="absolute inset-0 flex items-center justify-center text-10xl">
+											{/* Right Side Image */}
+											<img
+												src={careerChart}
+												alt="Career Growth"
+												className="w-35 h-35 object-contain "
+											/>
+										</div>
 									</div>
-								</div>
-								<div className="text-white/90 text-sm mb-4 leading-relaxed">
-									"Found my perfect role in just 2 weeks. The matching algorithm is incredibly accurate!"
-								</div>
-								<div className="flex items-center gap-2">
-									<span className="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span>
-									<span className="text-white/60 text-xs">5.0 Rating</span>
 								</div>
 							</div>
+							<div className="relative w-full max-w-sm space-y-6">
+								{/* Trusted Platform Card */}
+								<div className=" z-10 space-y-10  ">
+									<div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 overflow-hidden">
 
-							{/* Floating Badge 1 */}
-							<div className="absolute top-8 -right-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl px-4 py-3 shadow-xl hover:scale-110 transition-transform">
-								<div className="text-xs text-white/60 mb-1">Salary Range</div>
-								<div className="text-white font-bold">Rs 95K/mo</div>
-							</div>
+										{/* Header */}
 
-							{/* Floating Badge 2 */}
-							<div className="absolute -bottom-2 -left-6 bg-emerald-500/20 backdrop-blur-xl border border-emerald-400/30 rounded-xl px-4 py-3 shadow-xl hover:scale-110 transition-transform">
-								<div className="flex items-center gap-2">
-									<span className="text-emerald-400 text-lg">✓</span>
-									<span className="text-white/90 text-xs font-semibold">Application Matched</span>
+										<div className="flex items-start justify-between mb-4">
+											<div className="flex items-center gap-3">
+												<img
+													src={trustShield}
+													alt="Trusted Platform"
+													className="w-12 h-12 object-contain"
+												/>
+
+												<div>
+													<h3 className="text-white font-bold text-lg">
+														Trusted Platform
+													</h3>
+													<p className="text-white/60 text-xs mt-0.5">
+														Verified Employers & Secure Applications
+													</p>
+												</div>
+											</div>
+
+											{/* Right Side Image */}
+
+
+										</div>
+
+										<p className="text-white/75 text-xs leading-relaxed mb-3">
+											Connect with reputable employers and apply confidently through a
+											secure and reliable recruitment platform.
+										</p>
+
+										<div className="pt-3 border-t border-white/10">
+											<button className="text-emerald-400 text-xs font-semibold hover:text-emerald-300 transition-colors">
+												Explore Opportunities →
+											</button>
+										</div>
+									</div>
+									<div className="absolute -top-14 -right-14 z-30 opacity-180">
+										<div className="w-40 h-40 bg-linear-to-br from-blue-400/30 to-cyan-400/30 rounded-full blur-2xl"></div>
+										<div className="absolute inset-0 flex items-center justify-center text-10xl">
+											{/* Right Side Image */}
+											<img
+												src={trustShield}
+												alt="Career Growth"
+												className="w-35 h-35 object-contain "
+											/>
+										</div>
+									</div>
+								</div>
+
+								{/* Floating Stats */}
+								<div className="absolute -bottom-6 -right-6 bg-white/15 backdrop-blur-xl border border-white/25 rounded-xl px-5 py-4 shadow-lg">
+									<div className="text-white font-black text-3xl">2.8K</div>
+									<div className="text-white/70 text-xs">Active Jobs</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+
+		</section >
 	);
 }
