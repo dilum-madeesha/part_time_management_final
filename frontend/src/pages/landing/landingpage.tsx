@@ -1,6 +1,6 @@
 import LandingNav from "../../components/landingcom/LandingNav";
 import LandingHero from "../../components/landingcom/LandingHero";
-import LandingFeatures from "../../components/landingcom/LandingFeatures";
+import LandingServices from "../../components/landingcom/LandingServices";
 import LandingHowItWorks from "../../components/landingcom/LandingHowItWorks";
 import LandingCategories from "../../components/landingcom/LandingCategories";
 import LandingCompanies from "../../components/landingcom/LandingCompanies";
@@ -17,7 +17,7 @@ export default function LandingPage() {
 		<div className="min-h-screen bg-white font-sans antialiased">
 			<LandingNav />
 			<LandingHero />
-			<LandingFeatures />
+			<LandingServices />
 			<div id="learn-more">
 				<LandingHowItWorks />
 				<LandingCategories />

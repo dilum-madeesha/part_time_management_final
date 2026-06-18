@@ -39,6 +39,7 @@ export interface Feature {
 	title: string;
 	desc: string;
 	color: string;
+	image?: string;
 }
 
 export interface Benefit {
@@ -89,13 +90,58 @@ export const ARTICLES: Article[] = [
 	{ title: "Remote Work Trends Shaping Tech in 2026", date: "Apr 18, 2026", author: "Mia R.", img: "🌐", category: "Trends" },
 ];
 
-export const FEATURES: Feature[] = [
-	{ icon: "🔍", title: "Smart Job Matching", desc: "AI-powered algorithms match your skills with the perfect opportunities instantly." },
-	{ icon: "⚡", title: "Quick Applications", desc: "Apply to jobs with a single click. No lengthy forms, just pure efficiency." },
-	{ icon: "🔔", title: "Real-Time Alerts", desc: "Get instant notifications for new jobs matching your profile and preferences." },
-	{ icon: "👥", title: "Direct Chat", desc: "Connect directly with employers without intermediaries. Clear communication always." },
-	{ icon: "📊", title: "Track Progress", desc: "Monitor all your applications in one place with detailed status updates and feedback." },
-	{ icon: "💰", title: "Transparent Pricing", desc: "No hidden fees. Know exactly what you're paying for before you commit." },
+export const SERVICES: Feature[] = [
+  
+  {
+    icon: "📄",
+    title: "Employee Management",
+    desc: "Create your user account and can find the part-time jobs.",
+    color: "#06B6D4",
+    image: "usermange.png",
+  },
+  {
+    icon: "📊",
+    title: "Job owner Management",
+    desc: "Create the owner account and posting the job in the system",
+    color: "#8B5CF6",
+    image: "usermange.png",
+  },
+  {
+    icon: "🏢",
+    title: "Related job suggessing in users",
+    desc: "User working path related jobs suggesing.",
+    color: "#EC4899",
+  },
+  {
+    icon: "👥",
+    title: " Tracking location using map",
+    desc: "Job selected after Users can finding the Job location.",
+    color: "#10B981",
+  },
+  {
+    icon: "🔔",
+    title: "Real-Time Notifications",
+    desc: "Receive instant updates on new jobs, interview invitations",
+    color: "#F59E0B",
+  },
+  {
+    icon: "✅",
+    title: "Verified Employers and Owners",
+    desc: "Connect with trusted and verified employers only.",
+    color: "#22C55E",
+  },
+  {
+    icon: "🎓",
+    title: "Student-Friendly Opportunities",
+    desc: "Explore flexible and weekend job opportunities for students.",
+    color: "#EF4444",
+  },
+  {
+    icon: "🗓️",
+    title: "Shift & Schedule Management",
+    desc: "Manage working shifts and schedules effectively.",
+    color: "#14B8A6",
+  },
 ];
 
 export const BENEFITS = [
@@ -110,6 +156,7 @@ export const BENEFITS = [
 			"Free career resources and tips",
 			"Networking with professionals"
 		],
+		image: "../assets/usermanage.png",
 		color: "#6366F1",
 		bgColor: "#EEF2FF"
 	},
