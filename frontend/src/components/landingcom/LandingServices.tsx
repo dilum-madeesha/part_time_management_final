@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SERVICES } from "./landingData";
 
 export default function LandingServices() {
-	const [selectedService, setSelectedService] = useState<any>(null);
+	const [selectedService, setSelectedService] = useState(SERVICES[0]);
 
 	const getImagePath = (imageName?: string): string => {
 		if (!imageName) return "";
@@ -10,152 +10,96 @@ export default function LandingServices() {
 	};
 
 	return (
-		<section className="py-24 bg-slate-50 relative overflow-hidden">
-
-			{/* Background Decorations */}
-			<div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-			<div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-				{/* Header */}
-				<div className="text-center mb-10">
-					<h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
+		<section className="py-20 md:py-10 bg-lime-100 overflow-hidden">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				{/* Header Section */}
+				<div className="text-center mb-10 md:mb-20">
+					<h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#0F172A] leading-tight mb-1">
 						Everything You Need
 						<br />
-						<span className="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-							Services Providing
-						</span>
+						<span className="text-[#6366F1]">Services Providing</span>
 					</h2>
-
-					<p className="text-lg text-slate-600 max-w-2xl mx-auto">
+					<p className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto">
 						Powerful tools designed to simplify job searching and recruitment.
 					</p>
 				</div>
 
-				{/* ZIG ZAG ROWS */}
-				<div className="space-y-10">
-
-					{SERVICES.map((service, index) => (
-						<div
-							key={service.title}
-							className={`grid grid-cols-1 lg:grid-cols-2 gap-5 items-center`}
-						>
-
-							{/* IMAGE LEFT (even rows) */}
-							{index % 2 === 0 && (
-								<div className="flex justify-center">
-									<div
-										className="w-full max-w-md h-80 rounded-2xl flex items-center justify-center text-6xl overflow-hidden"
-										style={{
-											background: `linear-gradient(135deg, ${service.color}20, white)`
-										}}
-									>
-										{service.image ? (
-											<img
-												src={getImagePath(service.image)}
-												alt={service.title}
-												className="w-full h-full object-cover"
-											/>
-										) : (
-											service.icon
-										)}
-									</div>
-								</div>
-							)}
-
-							{/* CONTENT */}
-							<div
-								className={`bg-white rounded-3xl p-10 shadow-lg border border-slate-200 hover:shadow-2xl transition-all cursor-pointer`}
-								onClick={() => setSelectedService(service)}
-							>
-								<div
-									className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6"
-									style={{
-										backgroundColor: `${service.color}20`,
-									}}
-								>
-									{service.icon}
-								</div>
-
-								<h3 className="text-3xl font-bold text-slate-900 mb-4">
-									{service.title}
-								</h3>
-
-								<p className="text-slate-600 leading-relaxed text-lg">
-									{service.desc}
-								</p>
-
-								<div
-									className="mt-6 font-semibold"
-									style={{ color: service.color }}
-								>
-									View Full Details →
-								</div>
-							</div>
-
-							{/* IMAGE RIGHT (odd rows) */}
-							{index % 2 !== 0 && (
-								<div className="flex justify-center">
-									<div
-										className="w-full max-w-md h-80 rounded-3xl flex items-center justify-center text-6xl shadow-lg overflow-hidden"
-										style={{
-											background: `linear-gradient(135deg, ${service.color}20, white)`
-										}}
-									>
-										{service.image ? (
-											<img
-												src={getImagePath(service.image)}
-												alt={service.title}
-												className="w-full h-full object-cover"
-											/>
-										) : (
-											service.icon
-										)}
-									</div>
-								</div>
-							)}
-
+				{/* Content Grid */}
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+					
+					{/* Left Column: Featured Service Detail */}
+					<div className="lg:col-span-8 transition-all duration-500 ease-in-out">
+						<div className="relative group rounded-4xl overflow-hidden shadow-2xl mb-10 bg-slate-100">
+							<img 
+								src={getImagePath(selectedService.image)} 
+								alt={selectedService.title}
+								key={selectedService.title}
+								className="w-full aspect-16/10 object-cover transition-transform duration-500 group-hover:scale-105 animate-in fade-in zoom-in-95"
+							/>
+							<div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
 						</div>
-					))}
-				</div>
 
-				{/* MODAL */}
-				{/* {selectedService && (
-					<div
-						className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
-						onClick={() => setSelectedService(null)}
-					>
-						<div
-							className="bg-white rounded-3xl max-w-xl w-full p-8 relative"
-							onClick={(e) => e.stopPropagation()}
-						>
-							<button
-								onClick={() => setSelectedService(null)}
-								className="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-500"
-							>
-								✕
-							</button>
-
-							<div
-								className="w-20 h-20 rounded-2xl flex items-center justify-center text-5xl mb-6"
-								style={{
-									backgroundColor: `${selectedService.color}20`,
-								}}
-							>
-								{selectedService.icon}
-							</div>
-
-							<h2 className="text-3xl font-bold mb-4">
+						<div className="space-y-6">
+							<span className="inline-block text-[#6366F1] font-bold text-sm tracking-widest uppercase">
+								{selectedService.tag}
+							</span>
+							<h3 className="text-3xl md:text-4xl font-extrabold text-[#0F172A]">
 								{selectedService.title}
-							</h2>
-
-							<p className="text-slate-600 text-lg leading-relaxed">
+							</h3>
+							<p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-3xl">
 								{selectedService.desc}
 							</p>
+							<div className="pt-4">
+								<a 
+									href="#" 
+									className="group inline-flex items-center text-[#10B981] font-bold text-lg hover:text-[#059669] transition-colors"
+								>
+									View Full Details
+									<span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+								</a>
+							</div>
 						</div>
 					</div>
-				)} */}
+
+					{/* Right Column: Service Navigation List */}
+					<div className="lg:col-span-4 space-y-4">
+						{SERVICES.map((service, index) => {
+							const isActive = selectedService.title === service.title;
+							return (
+								<div 
+									key={index}
+									onClick={() => setSelectedService(service)}
+									className={`group flex items-center gap-5 p-5 rounded-2xl cursor-pointer transition-all duration-300 ${
+										isActive 
+										? 'bg-slate-50 shadow-md ring-1 ring-slate-100' 
+										: 'hover:bg-slate-50'
+									}`}
+								>
+									{/* Thumbnail Image */}
+									<div className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 shadow-sm">
+										<img 
+											src={getImagePath(service.image)} 
+											alt={service.title}
+											className={`w-full h-full object-cover transition-transform duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}
+										/>
+									</div>
+
+									{/* Item Info */}
+									<div className="flex-1">
+										<span className={`block text-[10px] md:text-xs font-bold uppercase tracking-wider mb-1 ${isActive ? 'text-[#6366F1]' : 'text-slate-400'}`}>
+											{service.tag}
+										</span>
+										<h4 className={`text-base md:text-lg font-bold transition-colors ${isActive ? 'text-[#0F172A]' : 'text-slate-600 group-hover:text-[#0F172A]'}`}>
+											{service.title}
+										</h4>
+									</div>
+								</div>
+							);
+						})}
+					</div>
+
+				</div>
 			</div>
 		</section>
 	);

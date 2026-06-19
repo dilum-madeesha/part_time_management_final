@@ -34,9 +34,29 @@ export interface Article {
 	category: string;
 }
 
+export interface JobType {
+	title: string;
+	desc: string;
+	icon: string;
+	examples: string[];
+	color: string;
+}
+
+export interface TeamMember {
+	name: string;
+	role: string;
+	bio: string;
+	avatar: string;
+	socials: {
+		platform: "linkedin" | "twitter" | "github";
+		url: string;
+	}[];
+}
+
 export interface Feature {
 	icon: string;
 	title: string;
+	tag?: string;
 	desc: string;
 	color: string;
 	image?: string;
@@ -79,9 +99,40 @@ export const STEPS = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-	{ name: "Kera Williams", role: "UX Designer at Google", avatar: "KW", text: "GigLink made my job search incredibly smooth. Within two weeks I had three interviews and landed my dream role at Google. The smart matching is genuinely impressive!", rating: 5 },
-	{ name: "James Chen", role: "Dev Lead at Microsoft", avatar: "JC", text: "As an employer, the quality of applicants is outstanding. The platform filters candidates well and the chat feature saves hours of back-and-forth emails.", rating: 5 },
-	{ name: "Aisha Perera", role: "Data Analyst at Amazon", avatar: "AP", text: "Coming from Sri Lanka, I wasn't sure I'd find remote roles. GigLink connected me with Amazon in under a month. Highly recommend to every tech professional!", rating: 5 },
+	{ 
+		name: "Aisha Perera", 
+		role: "Data Analyst at Amazon", 
+		avatar: "AP", 
+		text: "Coming from Sri Lanka, I wasn't sure I'd find remote roles. UniTalent connected me with Amazon in under a month. Highly recommended!", 
+		rating: 5 
+	},
+	{ 
+		name: "Marcus Johnson", 
+		role: "Senior Frontend Engineer at Netflix", 
+		avatar: "MJ", 
+		text: "The quality of opportunities here is unmatched. I found a role that perfectly aligns with my career goals and salary expectations.", 
+		rating: 5 
+	},
+	{ 
+		name: "Sarah Jenkins", 
+		role: "VP of Engineering at Stripe", 
+		avatar: "SJ", 
+		text: "UniTalent has become our go-to platform for sourcing top-tier technical talent. The signal-to-noise ratio is incredible compared to other boards.", 
+		rating: 5 
+	},
+	{ 
+		name: "David Kim", 
+		role: "Product Manager at Spotify", 
+		avatar: "DK", 
+		text: "I was passively looking, but the personalized recommendations were too good to ignore. Seamless process from start to finish.", 
+		rating: 5 
+	},
+];
+
+export const STATS = [
+	{ label: "Hires Made", value: "10k+", icon: "👥" },
+	{ label: "Partner Companies", value: "500+", icon: "🏢" },
+	{ label: "Average Rating", value: "4.9/5", icon: "⭐" },
 ];
 
 export const ARTICLES: Article[] = [
@@ -91,56 +142,45 @@ export const ARTICLES: Article[] = [
 ];
 
 export const SERVICES: Feature[] = [
-  
   {
     icon: "📄",
+    tag: "Management",
     title: "Employee Management",
-    desc: "Create your user account and can find the part-time jobs.",
-    color: "#06B6D4",
-    image: "usermange.png",
+    desc: "Create your user account and easily find part-time jobs that fit your schedule. Manage your profile, track applications, and communicate with employers all in one place.",
+    color: "#4F46E5",
+    image: "services.png",
   },
   {
-    icon: "📊",
-    title: "Job owner Management",
-    desc: "Create the owner account and posting the job in the system",
-    color: "#8B5CF6",
-    image: "usermange.png",
+    icon: "🤖",
+    tag: "AI Matching",
+    title: "Smart Job Matching",
+    desc: "Our AI-powered algorithm matches your skills and preferences with the most relevant job opportunities, ensuring a perfect fit for both seekers and employers.",
+    color: "#3B82F6",
+    image: "parttime.png",
   },
   {
-    icon: "🏢",
-    title: "Related job suggessing in users",
-    desc: "User working path related jobs suggesing.",
-    color: "#EC4899",
-  },
-  {
-    icon: "👥",
-    title: " Tracking location using map",
-    desc: "Job selected after Users can finding the Job location.",
+    icon: "⚡",
+    tag: "Efficiency",
+    title: "1-Click Quick Apply",
+    desc: "Save time with our streamlined application process. Apply to multiple jobs with just one click using your saved profile and resume.",
     color: "#10B981",
+    image: "presnet.png",
   },
   {
-    icon: "🔔",
-    title: "Real-Time Notifications",
-    desc: "Receive instant updates on new jobs, interview invitations",
+    icon: "🛡️",
+    tag: "Trust & Safety",
+    title: "Verified Employers",
+    desc: "We rigorously vet all employers on our platform to ensure a safe and trustworthy job search experience for all our users.",
     color: "#F59E0B",
+    image: "usermange.png",
   },
   {
-    icon: "✅",
-    title: "Verified Employers and Owners",
-    desc: "Connect with trusted and verified employers only.",
-    color: "#22C55E",
-  },
-  {
-    icon: "🎓",
-    title: "Student-Friendly Opportunities",
-    desc: "Explore flexible and weekend job opportunities for students.",
-    color: "#EF4444",
-  },
-  {
-    icon: "🗓️",
-    title: "Shift & Schedule Management",
-    desc: "Manage working shifts and schedules effectively.",
-    color: "#14B8A6",
+    icon: "📅",
+    tag: "Flexibility",
+    title: "Schedule & Shifts",
+    desc: "Take control of your work-life balance with our flexible scheduling tools. Find and manage shifts that work for you.",
+    color: "#6366F1",
+    image: "lock.png",
   },
 ];
 
@@ -173,5 +213,104 @@ export const BENEFITS = [
 		],
 		color: "#3B82F6",
 		bgColor: "#EFF6FF"
+	}
+];
+
+export const JOB_TYPES: JobType[] = [
+	{
+		title: "Student Jobs",
+		desc: "Part-time jobs students can do alongside studies.",
+		icon: "🎓",
+		examples: ["Data Entry Operator", "Library Assistant", "Tutor", "Campus Ambassador"],
+		color: "#3B82F6"
+	},
+	{
+		title: "Remote Jobs",
+		desc: "Online jobs done from home.",
+		icon: "💻",
+		examples: ["Virtual Assistant", "Content Writer", "Social Media Manager", "Graphic Designer"],
+		color: "#6366F1"
+	},
+	{
+		title: "Weekend Jobs",
+		desc: "Jobs done only on Saturdays & Sundays.",
+		icon: "📅",
+		examples: ["Event Staff", "Sales Assistant", "Restaurant Helper"],
+		color: "#F97316"
+	},
+	{
+		title: "Freelance Jobs",
+		desc: "Project-based or short-term jobs.",
+		icon: "💼",
+		examples: ["Web Developer", "UI/UX Designer", "Video Editor", "Photographer"],
+		color: "#A855F7"
+	},
+	{
+		title: "Office Assistant Jobs",
+		desc: "Part-time jobs in an office environment.",
+		icon: "🏢",
+		examples: ["Receptionist", "Data Entry Clerk", "Administrative Assistant"],
+		color: "#14B8A6"
+	},
+	{
+		title: "Delivery & Logistics Jobs",
+		desc: "Transport and delivery jobs.",
+		icon: "🚚",
+		examples: ["Delivery Rider", "Courier Assistant", "Warehouse Helper"],
+		color: "#EAB308"
+	},
+	{
+		title: "Customer Service Jobs",
+		desc: "Customer service related jobs.",
+		icon: "🎧",
+		examples: ["Call Center Agent", "Customer Support Assistant", "Front Desk Officer"],
+		color: "#EF4444"
+	},
+	{
+		title: "Retail & Sales Jobs",
+		desc: "Sales and store related jobs.",
+		icon: "🛍️",
+		examples: ["Cashier", "Sales Representative", "Store Assistant"],
+		color: "#22C55E"
+	},
+	{
+		title: "IT & Technology Jobs",
+		desc: "Technical part-time jobs.",
+		icon: "💻",
+		examples: ["Frontend Developer", "Backend Developer", "Software Tester", "IT Support Assistant"],
+		color: "#06B6D4"
+	}
+];
+
+export const TEAM_MEMBERS: TeamMember[] = [
+	{
+		name: "Marcus Chen",
+		role: "System Owner",
+		bio: "Former HR director passionate about bridging the gap between academia and industry.",
+		avatar: "https://i.pravatar.cc/150?u=marcus",
+		socials: [
+			{ platform: "linkedin", url: "#" },
+			{ platform: "twitter", url: "#" }
+		]
+	},
+	{
+		name: "Sarah Jenkins",
+		role: "Software Engineer",
+		bio: "Full-stack developer focused on building scalable, secure platforms for our users.",
+		avatar: "https://i.pravatar.cc/150?u=sarah",
+		socials: [
+			{ platform: "linkedin", url: "#" },
+			{ platform: "github", url: "#" }
+		]
+	},
+	{
+		name: "David Alaba",
+		role: "UI/UX Engineer",
+		bio: "Design systems advocate creating intuitive and accessible experiences for students.",
+		avatar: "https://i.pravatar.cc/150?u=david",
+		socials: [
+			{ platform: "linkedin", url: "#" },
+			{ platform: "twitter", url: "#" }
+		]
 	}
 ];

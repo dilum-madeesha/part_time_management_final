@@ -1,6 +1,6 @@
 import { COMPANIES } from "./landingData";
 
-export default function LandingCompanies() {
+export default function LandingAbout() {
 	return (
 		<section className="py-16 bg-slate-900 relative overflow-hidden">
 			{/* Decorative elements */}

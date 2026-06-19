@@ -1,14 +1,11 @@
 import LandingNav from "../../components/landingcom/LandingNav";
 import LandingHero from "../../components/landingcom/LandingHero";
 import LandingServices from "../../components/landingcom/LandingServices";
-import LandingHowItWorks from "../../components/landingcom/LandingHowItWorks";
-import LandingCategories from "../../components/landingcom/LandingCategories";
-import LandingCompanies from "../../components/landingcom/LandingCompanies";
-import LandingJobs from "../../components/landingcom/LandingJobs";
-import LandingBenefits from "../../components/landingcom/LandingBenefits";
-import LandingCTA from "../../components/landingcom/LandingCTA";
+
+import LandingEmployees from "../../components/landingcom/LandingEmployees";
+import LandingJob from "../../components/landingcom/LandingJobType";
 import LandingTestimonials from "../../components/landingcom/LandingTestimonials";
-import LandingArticles from "../../components/landingcom/LandingArticles";
+import LandingAbout from "../../components/landingcom/LandingAbout";
 import LandingNewsletter from "../../components/landingcom/LandingNewsletter";
 import LandingFooter from "../../components/landingcom/LandingFooter";
 
@@ -19,14 +16,11 @@ export default function LandingPage() {
 			<LandingHero />
 			<LandingServices />
 			<div id="learn-more">
-				<LandingHowItWorks />
-				<LandingCategories />
-				<LandingCompanies />
-				<LandingJobs />
-				<LandingBenefits />
-				<LandingCTA />
+				
+				<LandingEmployees />
+				<LandingJob />
 				<LandingTestimonials />
-				<LandingArticles />
+				<LandingAbout />
 				<LandingNewsletter />
 			</div>
 			<LandingFooter />
