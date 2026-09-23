@@ -1,29 +1,53 @@
-import LandingNav from "../../components/landingcom/LandingNav";
-import LandingHero from "../../components/landingcom/LandingHero";
-import LandingServices from "../../components/landingcom/LandingServices";
+import LandingNav from "./landingcom/LandingNav";
+import LandingHero from "./landingcom/LandingHero";
+import LandingServices from "./landingcom/LandingServices";
 
-import LandingEmployees from "../../components/landingcom/LandingEmployees";
-import LandingJob from "../../components/landingcom/LandingJobType";
-import LandingTestimonials from "../../components/landingcom/LandingTestimonials";
-import LandingAbout from "../../components/landingcom/LandingAbout";
-import LandingNewsletter from "../../components/landingcom/LandingNewsletter";
-import LandingFooter from "../../components/landingcom/LandingFooter";
+import LandingEmployees from "./landingcom/LandingEmployees";
+import LandingJob from "./landingcom/LandingJobType";
+import LandingFeed from "./landingcom/LandingFeed";
+// import LandingNewsletter from "./landingcom/LandingNewsletter";
+import LandingFooter from "./landingcom/LandingFooter";
+import LandingTeam from "./landingcom/LandingTeam";
+import ContactPage from "./landingcom/LandingContact";
 
 export default function LandingPage() {
 	return (
 		<div className="min-h-screen bg-white font-sans antialiased">
 			<LandingNav />
-			<LandingHero />
-			<LandingServices />
+
+
 			<div id="learn-more">
+				<div id="home" className="scroll-mt-16">
+					<LandingHero />
+				</div>
+<div id="employee" className="scroll-mt-16">
+					<LandingEmployees />
+				</div>
 				
-				<LandingEmployees />
-				<LandingJob />
-				<LandingTestimonials />
-				<LandingAbout />
-				<LandingNewsletter />
+
+				<div id="services" className="scroll-mt-16">
+					<LandingServices />
+				</div>
+
+				<div id="types" className="scroll-mt-16">
+					<LandingJob />
+				</div>
+				<div id="feedback" className="scroll-mt-16">
+					<LandingFeed />
+				</div>
+
+
+				<div id="team" className="scroll-mt-16">
+					<LandingTeam />
+				</div>
+				<div id="contact" className="scroll-mt-16">
+					<ContactPage />
+				</div>
+				{/* <LandingNewsletter /> */}
 			</div>
-			<LandingFooter />
+			<div id="footer" className="scroll-mt-16">
+				<LandingFooter />
+			</div>
 		</div>
 	);
 }

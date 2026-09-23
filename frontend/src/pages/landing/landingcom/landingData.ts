@@ -36,7 +36,6 @@ export interface Article {
 
 export interface JobType {
 	title: string;
-	desc: string;
 	icon: string;
 	examples: string[];
 	color: string;
@@ -54,6 +53,7 @@ export interface TeamMember {
 }
 
 export interface Feature {
+	// highlights: import("react/jsx-runtime").JSX.Element;
 	icon: string;
 	title: string;
 	tag?: string;
@@ -219,63 +219,52 @@ export const BENEFITS = [
 export const JOB_TYPES: JobType[] = [
 	{
 		title: "Student Jobs",
-		desc: "Part-time jobs students can do alongside studies.",
+		
 		icon: "🎓",
 		examples: ["Data Entry Operator", "Library Assistant", "Tutor", "Campus Ambassador"],
 		color: "#3B82F6"
 	},
-	{
-		title: "Remote Jobs",
-		desc: "Online jobs done from home.",
-		icon: "💻",
-		examples: ["Virtual Assistant", "Content Writer", "Social Media Manager", "Graphic Designer"],
-		color: "#6366F1"
-	},
+	
 	{
 		title: "Weekend Jobs",
-		desc: "Jobs done only on Saturdays & Sundays.",
 		icon: "📅",
 		examples: ["Event Staff", "Sales Assistant", "Restaurant Helper"],
 		color: "#F97316"
 	},
 	{
 		title: "Freelance Jobs",
-		desc: "Project-based or short-term jobs.",
+
 		icon: "💼",
 		examples: ["Web Developer", "UI/UX Designer", "Video Editor", "Photographer"],
 		color: "#A855F7"
 	},
 	{
 		title: "Office Assistant Jobs",
-		desc: "Part-time jobs in an office environment.",
+
 		icon: "🏢",
 		examples: ["Receptionist", "Data Entry Clerk", "Administrative Assistant"],
 		color: "#14B8A6"
 	},
 	{
 		title: "Delivery & Logistics Jobs",
-		desc: "Transport and delivery jobs.",
 		icon: "🚚",
 		examples: ["Delivery Rider", "Courier Assistant", "Warehouse Helper"],
 		color: "#EAB308"
 	},
 	{
 		title: "Customer Service Jobs",
-		desc: "Customer service related jobs.",
 		icon: "🎧",
 		examples: ["Call Center Agent", "Customer Support Assistant", "Front Desk Officer"],
 		color: "#EF4444"
 	},
 	{
 		title: "Retail & Sales Jobs",
-		desc: "Sales and store related jobs.",
 		icon: "🛍️",
 		examples: ["Cashier", "Sales Representative", "Store Assistant"],
 		color: "#22C55E"
 	},
 	{
 		title: "IT & Technology Jobs",
-		desc: "Technical part-time jobs.",
 		icon: "💻",
 		examples: ["Frontend Developer", "Backend Developer", "Software Tester", "IT Support Assistant"],
 		color: "#06B6D4"
@@ -313,4 +302,5 @@ export const TEAM_MEMBERS: TeamMember[] = [
 			{ platform: "twitter", url: "#" }
 		]
 	}
+	
 ];

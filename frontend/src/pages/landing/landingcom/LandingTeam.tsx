@@ -1,6 +1,6 @@
 import { TEAM_MEMBERS } from "./landingData";
 
-export default function LandingAbout() {
+export default function LandingTeam() {
 	return (
 		<section className="py-20 md:py-10 bg-lime-100 overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -10,9 +10,8 @@ export default function AuthPage() {
 
   return (
     <div
-      className={`h-screen overflow-hidden flex ${
-        isLogin ? "flex-row" : "flex-row-reverse"
-      } transition-all duration-700 ease-in-out`}
+      className={`h-screen overflow-hidden flex ${isLogin ? "flex-row" : "flex-row-reverse"
+        } transition-all duration-700 ease-in-out`}
     >
       {/* ================= IMAGE SECTION ================= */}
       <div className="hidden lg:flex w-1/2 h-screen relative overflow-hidden bg-slate-900">
