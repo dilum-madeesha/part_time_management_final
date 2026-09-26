@@ -132,14 +132,23 @@ export default function LandingNav() {
             >
               Log in
             </Link>
+            {/* User Icon */}
+              <div className="w-6 h-6 rounded-full bg-[#3B2A20]/10 flex items-center justify-center text-[#3B2A20]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-3.5 h-3.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
 
-            <Link
-              to="/register"
-              onClick={closeMenus}
-              className="text-sm font-semibold text-[#EFE6D8] bg-[#3B2A20] hover:bg-[#2A1D15] px-5 py-2.5 rounded-full transition-colors"
-            >
-              Register
-            </Link>
           </div>
 
           {/* =========================

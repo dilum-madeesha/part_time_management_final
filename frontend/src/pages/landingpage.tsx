@@ -1,14 +1,14 @@
-import LandingNav from "./landingcom/LandingNav";
-import LandingHero from "./landingcom/LandingHero";
-import LandingServices from "./landingcom/LandingServices";
+import LandingNav from "./landing/LandingNav";
+import LandingHero from "./landing/LandingHero";
+import LandingServices from "./landing/LandingServices";
 
-import LandingEmployees from "./landingcom/LandingEmployees";
-import LandingJob from "./landingcom/LandingJobType";
-import LandingFeed from "./landingcom/LandingFeed";
+import LandingEmployees from "./landing/LandingEmployees";
+import LandingJob from "./landing/LandingJobType";
+import LandingFeed from "./landing/LandingFeed";
 // import LandingNewsletter from "./landingcom/LandingNewsletter";
-import LandingFooter from "./landingcom/LandingFooter";
-import LandingTeam from "./landingcom/LandingTeam";
-import ContactPage from "./landingcom/LandingContact";
+import LandingFooter from "./landing/LandingFooter";
+import LandingTeam from "./landing/LandingTeam";
+import ContactPage from "./landing/LandingContact";
 
 export default function LandingPage() {
 	return (
@@ -20,10 +20,10 @@ export default function LandingPage() {
 				<div id="home" className="scroll-mt-16">
 					<LandingHero />
 				</div>
-<div id="employee" className="scroll-mt-16">
+				<div id="employee" className="scroll-mt-16">
 					<LandingEmployees />
 				</div>
-				
+
 
 				<div id="services" className="scroll-mt-16">
 					<LandingServices />

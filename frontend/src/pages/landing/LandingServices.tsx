@@ -8,7 +8,7 @@ export default function LandingServices() {
 
 	const getImagePath = (imageName?: string): string => {
 		if (!imageName) return "";
-		return new URL(`../../../assets/${imageName}`, import.meta.url).href;
+		return new URL(`../../assets/${imageName}`, import.meta.url).href;
 	};
 
 	const activeIndex = SERVICES.findIndex(
